@@ -18,7 +18,7 @@ builtins = {
 	"*": num_op(operator.mul),
 	"/": num_op(operator.truediv),
 
-	".": lambda: print(stack.pop(), end = " "),
+	".": lambda: print(stack.pop()),
 
 	"dup": lambda: stack.append(stack[-1]),
 	"drop": stack.pop,
@@ -26,7 +26,7 @@ builtins = {
 	"over": lambda: stack.append(stack[-2]),
 	"rot": rot,
 
-	"emit": lambda: print(chr(stack.pop()), end = ""),
+	"emit": lambda: print(chr(stack.pop())),
 	"cr": print,
 
 	"=": bool_op(operator.eq),
@@ -34,8 +34,6 @@ builtins = {
 	"<": bool_op(operator.lt),
 	">=": bool_op(operator.ge),
 	"<=": bool_op(operator.le)
-
-	# do "and" next
 }
 
 words = {}
@@ -117,7 +115,7 @@ def main(expression):
 			except IndexError:
 				print("Error: stack underflow")
 
-	print("Stack:", stack)
+	# print("Stack:", stack)
 
 if __name__ == "__main__":
 	while True:
@@ -126,16 +124,18 @@ if __name__ == "__main__":
 
 """
 Words to implement:
-- dup
-- drop
-- swap
-- over
-- rot
-- emit
-- cr
-- ."
-
-- flow control stuff
-
+- and
+- or
+- invert
+- if then
+- mod
+- if else then
+- do loop
 - variable
+- !
+- @
+- constant
+- allot
+- key
+- begin until
 """
