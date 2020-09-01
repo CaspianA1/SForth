@@ -1,4 +1,4 @@
-# A small Forth interpreter.
+# SForth - a small Forth interpreter.
 
 ## Builtin words:
 - Addition, subtraction, multiplication, division
