@@ -25,7 +25,7 @@
 (define (repl)
 	(begin
 		; (display (format "Words: ~s\n" words))
-		(display (format "Stack: ~s\n" stack))
+		; (display (format "Stack: ~s\n" stack))
 		(display "> ")
 		(let ((expression (parse (tokenize (read-input (read-char) '())))))
 			(if (not (null? expression))
